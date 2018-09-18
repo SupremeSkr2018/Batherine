@@ -6,9 +6,12 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
+
 const index = require('./routes/index')
 const users = require('./routes/users')
-const myMusic=require('./routes/myMusic')
+const singer=require('./routes/singer')
+const trend=require('./routes/trend')
+const album=require('./routes/album')
 
 // error handler
 onerror(app)
@@ -36,7 +39,9 @@ app.use(async (ctx, next) => {
 // routes
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
-app.use(myMusic.routes(),myMusic.allowedMethods())
+app.use(singer.routes(),singer.allowedMethods())
+app.use(trend.routes(),trend.allowedMethods())
+app.use(album.routes(),album.allowedMethods())
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
