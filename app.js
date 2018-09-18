@@ -12,6 +12,7 @@ const users = require('./routes/users')
 const singer=require('./routes/singer')
 const trend=require('./routes/trend')
 const album=require('./routes/album')
+const myMusic=require('./routes/myMusic')
 
 // error handler
 onerror(app)
@@ -42,6 +43,7 @@ app.use(users.routes(), users.allowedMethods())
 app.use(singer.routes(),singer.allowedMethods())
 app.use(trend.routes(),trend.allowedMethods())
 app.use(album.routes(),album.allowedMethods())
+app.use(myMusic.routes(),myMusic.allowedMethods())
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
