@@ -1,4 +1,4 @@
-//把路由相应的业务分离出来
+//把路由相应的业务分离
 const commentDAO = require('../model/commentDAO')
 module.exports= {
     comment: async (ctx) => {

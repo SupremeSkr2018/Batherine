@@ -18,7 +18,7 @@ class  DB{
         return DAO('insert into comment(commentid,ccontent,ctype,albumid,userid)values(?,?,?,?,?)',
             [comment.commentid,comment.ccontent,comment.ctype,comment.albumid,comment.userid])
     }
-    //添加动态评论信息
+    //添加动态评论
     addComment1(comment){
         return DAO('insert into comment(commentid,ccontent,ctype,trendid,userid)values(?,?,?,?,?)',
             [comment.commentid,comment.ccontent,comment.ctype,comment.trendid,comment.userid])
