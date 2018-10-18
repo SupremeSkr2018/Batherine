@@ -13,5 +13,4 @@ router.get('/songlist/:singerid', async (ctx, next)=> {
 router.get('/song/:songid',async (ctx,next)=>{
     await singerController.getonesong(ctx)
 })
-
 module.exports = router

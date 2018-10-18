@@ -5,8 +5,8 @@ class DB {
         return DAO('select count(1) from zan where trendid=?',[id])
     }
     //获取指定歌曲点赞总数
-    getallsonzan(id){
-        return DAO('select count(1) from zan where songid=?',[id])
+    getallcomzan(id){
+        return DAO('select count(1) from zan where commentid=?',[id])
     }
 }
 module.exports=new DB();

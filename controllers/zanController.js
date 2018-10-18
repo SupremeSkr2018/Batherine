@@ -6,9 +6,9 @@ module.exports={
         ctx.set('content-type','application/json')
         ctx.body = {"code":200,"message":"ok","data":jsondata};
     },
-    getallsonzan:async(ctx,next)=>{
+    getallcomzan:async(ctx,next)=>{
         ctx.set('Access-Control-Allow-Origin','*');
-        let jsondata=await zanDAO.getallsonzan(ctx.params.songid)
+        let jsondata=await zanDAO.getallcomzan(ctx.params.commentid)
         ctx.set('content-type','application/json')
         ctx.body = {"code":200,"message":"ok","data":jsondata};
     }

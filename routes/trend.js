@@ -15,6 +15,8 @@ router.get('/deladd/:trendid',async (ctx,next)=>{
 router.get('/getalltrezan/:trendid',async (ctx,next)=>{
     await zanController.getalltrezan(ctx)
 })
-
+router.get('/getallcomzan/:commentid', async (ctx, next)=> {
+    await zanController.getallcomzan(ctx)
+})
 
 module.exports = router

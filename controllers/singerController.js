@@ -1,16 +1,16 @@
 const singerDAO=require('../model/singerDAO')
 module.exports={
     getallsinger:async(ctx,next)=> {
-        let jsondata = await singerDAO.getallsinger(ctx.params.singerid);
+        let jsondata = await singerDAO.getallsinger();
         console.log(jsondata)
         ctx.set('content-type', 'application/json')
-        ctx.body = {"code": 200, "message": "ok", data: jsondata[0]};
+        ctx.body = {"code": 200, "message": "ok", data: jsondata};
     },
     getsingersong:async(ctx,next)=>{
         let jsondata =await singerDAO.getsingersong(ctx.params.singerid);
         console.log(jsondata)
         ctx.set('content-type','application/json')
-        ctx.body = {"code":200,"message":"ok",data:jsondata[0]};
+        ctx.body = {"code":200,"message":"ok",data:jsondata};
     },
     getonesong:async(ctx,next)=>{
         let jsondata =await singerDAO.getonesong(ctx.params.songid);

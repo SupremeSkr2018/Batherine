@@ -13,6 +13,7 @@ module.exports={
 
             let jsondata=await trendDAO.addtrend(tre)
             ctx.set('content-type','application/json')
+            console.log(jsondata)
             ctx.body={"code":200,"message":"ok",data:jsondata}
 
             },
@@ -20,12 +21,12 @@ module.exports={
             let jsondata=await trendDAO.gettrend()
             console.log(jsondata)
             ctx.set('content-type','application/json')
-            ctx.body = {"code":200,"message":"ok","data":jsondata};
+            ctx.body = {"code":200,"message":"ok",data:jsondata};
             },
     deltrend:async(ctx,next)=>{
-        let jsondata =await trendDAO.deltrend(ctx.params.trengid)
+        let jsondata =await trendDAO.deltrend(ctx.params.trendid)
         ctx.set('content-type','application/json')
-        ctx.body={"code":200,"message":"ok",data:jsondata}
+        ctx.body={"code":200,"message":"ok",data:jsondata};
     }
 
 }
