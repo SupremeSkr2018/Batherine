@@ -14,11 +14,23 @@ const trend=require('./routes/trend')
 const album=require('./routes/album')
 const myMusic=require('./routes/myMusic')
 const work=require('./routes/work')
+const cors=require('koa2-cors')
 
 // error handler
 onerror(app)
 
 // middlewares
+app.use(cors({
+    origin: function (ctx) {
+        return 'http://localhost:8080'; //这样就能只允许 http://localhost:8080 这个域名的请求了
+    },
+    exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+    maxAge: 5,
+    credentials: true,
+    allowMethods: ['GET', 'POST', 'DELETE'],
+    allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+}))
+
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))
