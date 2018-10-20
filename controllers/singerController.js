@@ -6,6 +6,18 @@ module.exports={
         ctx.set('content-type', 'application/json')
         ctx.body = {"code": 200, "message": "ok", data: jsondata};
     },
+  getonesinger:async(ctx,next)=>{
+    let jsondata =await singerDAO.getonesinger(ctx.params.singerid);
+    console.log(jsondata)
+    ctx.set('content-type','application/json')
+    ctx.body = {"code":200,"message":"ok",data:jsondata};
+  },
+  gethotsinger:async(ctx,next)=>{
+    let jsondata =await singerDAO.gethotsinger(ctx.params.hot);
+    console.log(jsondata)
+    ctx.set('content-type','application/json')
+    ctx.body = {"code":200,"message":"ok",data:jsondata};
+  },
     getsingersong:async(ctx,next)=>{
         let jsondata =await singerDAO.getsingersong(ctx.params.singerid);
         console.log(jsondata)
