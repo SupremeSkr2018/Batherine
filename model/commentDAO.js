@@ -2,7 +2,7 @@
 const DAO = require('../model/DAO')
 class  DB{
     //获取专辑评论信息的方法
-    album(id){
+    comment(id){
         return DAO('select * from comment where albumid=?',[id])
     }
     //获取动态评论信息的方法

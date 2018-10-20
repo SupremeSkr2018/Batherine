@@ -3,7 +3,7 @@ const commentDAO = require('../model/commentDAO')
 const commentController =require('../controllers/commentController')
 router.prefix('/comment')
 //获取专辑评论信息
-router.get('/album',async (ctx, next)=>{
+router.get('/details/:albumid',async (ctx, next)=>{
     await commentController.comment(ctx)
 })
 //获取动态评论信息
