@@ -1,7 +1,7 @@
 //关于用户对象的相关数据操作
 const DAO = require('../model/DAO')
 class  DB{
-    //获取专辑评论信息的方法
+    //获取专辑评论信息的方
     comment(id){
         return DAO('select * from comment where albumid=?',[id])
     }

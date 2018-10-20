@@ -2,7 +2,6 @@
 const commentDAO = require('../model/commentDAO')
 module.exports= {
     comment: async (ctx) => {
-        //创建接口
         let jsondata = await commentDAO.comment(ctx.params.albumid);
         console.log(jsondata)
         //设置输出格式为json格式

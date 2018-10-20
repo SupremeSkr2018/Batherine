@@ -10,7 +10,7 @@ router.get('/details/:albumid',async (ctx, next)=>{
 router.get('/trend',async (ctx, next)=>{
     await commentController.trend(ctx)
 })
-//获取歌曲评论信息
+//获取歌曲评论信
 router.get('/song',async (ctx, next)=>{
     await commentController.song(ctx)
 })
