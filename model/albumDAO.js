@@ -8,5 +8,6 @@ class DB {
     getalbumsong(id){
         return DAO('select * from song where albumid=?',[id])
     }
+
 }
 module.exports=new DB();
