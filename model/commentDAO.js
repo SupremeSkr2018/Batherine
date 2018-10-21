@@ -9,6 +9,10 @@ class  DB{
     trend(id){
         return DAO('select * from comment where trendid=?',[id])
     }
+    //获取歌单的评论方法
+   sing(id){
+      return DAO('select * from comment where singlistid=?',[id])
+  }
     //获取歌曲评论信息的方法
     song(id){
         return DAO('select * from comment where songid=?',[id])

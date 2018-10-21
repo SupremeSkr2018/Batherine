@@ -6,6 +6,10 @@ router.prefix('/comment')
 router.get('/details/:albumid',async (ctx, next)=>{
     await commentController.comment(ctx)
 })
+//获取某一歌单的评论信息
+router.get('/sing/:singlistid',async (ctx, next)=>{
+  await commentController.sing(ctx)
+})
 //获取动态评论信息
 router.get('/trend',async (ctx, next)=>{
     await commentController.trend(ctx)
