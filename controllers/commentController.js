@@ -2,12 +2,19 @@
 const commentDAO = require('../model/commentDAO')
 module.exports= {
     comment: async (ctx) => {
-        let jsondata = await commentDAO.comment(ctx.params.albumid);
-        console.log(jsondata)
-        //设置输出格式为json格式
-        ctx.set('content-type', 'application/json');
-        ctx.body = {code: 200, message: ' ok', data: jsondata};
-    },
+  let jsondata = await commentDAO.comment(ctx.params.albumid);
+  console.log(jsondata)
+  //设置输出格式为json格式
+  ctx.set('content-type', 'application/json');
+  ctx.body = {code: 200, message: ' ok', data: jsondata};
+},
+  sing: async (ctx) => {
+  let jsondata = await commentDAO.sing(ctx.params.singlistid);
+  console.log(jsondata)
+  //设置输出格式为json格式
+  ctx.set('content-type', 'application/json');
+  ctx.body = {code: 200, message: ' ok', data: jsondata};
+},
     //获取动态评论信息
     trend: async (ctx) => {
         ctx.set('Access-Control-Origin', '*')
