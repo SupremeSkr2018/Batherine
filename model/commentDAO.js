@@ -19,19 +19,24 @@ class  DB{
     }
     //添加专辑评论信息方法
     addComment(comment){
-        return DAO('insert into comment(commentid,ccontent,ctype,albumid,userid)values(?,?,?,?,?)',
-            [comment.commentid,comment.ccontent,comment.ctype,comment.albumid,comment.userid])
+        return DAO('insert into comment(ccontent,data,albumid,userid)values(?,?,?,?)',
+            [comment.ccontent,comment.data,comment.albumid,comment.userid])
     }
     //添加动态评论
     addComment1(comment){
-        return DAO('insert into comment(commentid,ccontent,ctype,trendid,userid)values(?,?,?,?,?)',
-            [comment.commentid,comment.ccontent,comment.ctype,comment.trendid,comment.userid])
+        return DAO('insert into comment(ccontent,data,trendid,userid)values(?,?,?,?)',
+            [comment.ccontent,comment.data,comment.trendid,comment.userid])
     }
     //添加歌曲评论信息
     addComment2(comment){
-        return DAO('insert into comment(commentid,ccontent,ctype,songid,userid)values(?,?,?,?,?)',
-            [comment.commentid,comment.ccontent,comment.ctype,comment.songid,comment.userid])
+        return DAO('insert into comment(ccontent,data,songid,userid)values(?,?,?,?)',
+            [comment.ccontent,comment.data,comment.songid,comment.userid])
     }
+    //添加对歌单的评论信息
+  addComment3(comment){
+      return DAO('insert into comment(ccontent,data,singlistid,userid)values(?,?,?,?)',
+        [comment.ccontent,comment.data,comment.singlistid,comment.userid])
+  }
     //删除评论信息
     delcomment(id){
         return DAO('delete from comment where commentid=?',[id])
