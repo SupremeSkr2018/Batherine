@@ -34,9 +34,8 @@ module.exports= {
         ctx.set('Access-Control-Origin', '*')
         ctx.set('content-type', 'application/json');
         let comment = {
-            commentid: ctx.request.body.commentid,
             ccontent: ctx.request.body.ccontent,
-            ctype: ctx.request.body.ctype,
+            data:ctx.request.body.data,
             albumid: ctx.request.body.albumid,
             userid: ctx.request.body.userid,
         }
@@ -48,9 +47,8 @@ module.exports= {
         ctx.set('Access-Control-Origin', '*')
         ctx.set('content-type', 'application/json');
         let comment = {
-            commentid: ctx.request.body.commentid,
             ccontent: ctx.request.body.ccontent,
-            ctype: ctx.request.body.ctype,
+            data: ctx.request.body.data,
             trendid: ctx.request.body.trendid,
             userid: ctx.request.body.userid,
         }
@@ -59,18 +57,28 @@ module.exports= {
     },
     //添加歌手评论信息
     addComment2: async (ctx) => {
-        ctx.set('Access-Control-Origin', '*')
         ctx.set('content-type', 'application/json');
         let comment = {
-            commentid: ctx.request.body.commentid,
             ccontent: ctx.request.body.ccontent,
-            ctype: ctx.request.body.ctype,
+            data: ctx.request.body.data,
             songid: ctx.request.body.songid,
             userid: ctx.request.body.userid,
         }
         let jsondata = await commentDAO.addComment2(comment);
         ctx.body = {code: 200, message: 'add ok', data: jsondata};
     },
+  //添加对歌单的评论信息
+  addComment3: async (ctx) =>{
+    ctx.set('content-type', 'application/json');
+    let comment = {
+      ccontent: ctx.request.body.ccontent,
+      data: ctx.request.body.data,
+      singlistid: ctx.request.body.singlistid,
+      userid: ctx.request.body.userid,
+    }
+    let jsondata =await  commentDAO.addComment3(comment);
+    ctx.body = {code: 200, message: 'add ok', data: jsondata};
+  },
     //删除评论信息
     delcomment: async (ctx) => {
         ctx.set('Access-Control-Origin', '*')
