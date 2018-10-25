@@ -1,4 +1,5 @@
 const router=require('koa-router')()
+// const
 const  userController=require('../controllers/userController')
 
 router.prefix('/user')
@@ -9,6 +10,7 @@ router.post('/register',async (ctx,next)=>{
     // ctx.body = {code:200,message:'ok',data:jsondata};
 })
 //用户登录
+
 router.post('/login',async (ctx,next)=>{
     // let jsondata = userController.login(ctx)
     await userController.login(ctx,next)
