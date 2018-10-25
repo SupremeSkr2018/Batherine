@@ -6,9 +6,7 @@ class DB{
             [register.upassword,register.ucallphone,register.uname])
     }
     //用户登录
-    // login() {
-    //     return DAO('select ucallphone,upassword  from user',[]);
-    // }
+
     login(user){
         var sql='select userid,uname,ucallphone,upassword from user where ucallphone=?'
         return DAO(sql,[user.ucallphone])

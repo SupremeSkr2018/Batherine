@@ -1,7 +1,7 @@
 var userDAO = require('../model/userDAO')
 var crypto=require('crypto')
  module.exports = {
-
+//注册
     register: async (ctx, next) => {
         let query = ctx.request.body;
         let register = {};
@@ -23,28 +23,7 @@ var crypto=require('crypto')
 
 
 
-    // login: async (ctx, next) => {
-    //     try {
-    //         let ucallphone = ctx.request.body.ucallphone;
-    //         let upassword = ctx.request.body.upassword;
-    //         let login = await userDAO.login();
-    //         let result = false;
-    //         for (let i = 0;i < login.length;i++) {
-    //             if (upassword == login[i].upassword && ucallphone == login[i].ucallphone) {
-    //                 result = true;
-    //                 ctx.body = {'code': 200, 'message': '登录成功', "data": result}
-    //                 return;
-    //             }
-    //         }
-            // else {
-    //         result = false;
-    //         ctx.body = {'code': 500, 'message': '登录失败', "data":result};
-    //
-    //         // }
-    //     }catch (err) {
-    //         ctx.body = {"code": 500, "message": err.message}
-    //     }
-    // },
+    //登录
     login:async(ctx,next)=>{
          let query=ctx.request.body;
          let user={}
