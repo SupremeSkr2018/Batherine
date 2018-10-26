@@ -7,10 +7,16 @@ class DB{
     }
     //用户登录
 
+
     login(user){
-        var sql='select userid,uname,ucallphone,upassword from user where ucallphone=?'
-        return DAO(sql,[user.ucallphone])
-    }
+        // var sql='select userid,uname,upassword from user where ucallphone=?'
+        // return DAO(sql,[user.ucallphone])
+     return DAO('select ucallphone,upassword,userid,uname from user where ucallphone=?',[user.ucallphone])
+}
+// login(user){
+    //     // var sql='select userid,uname,ucallphone,upassword from user where ucallphone=?'
+    //
+    // }
 
     //信息完善
     perfect(user){
