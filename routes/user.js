@@ -5,16 +5,15 @@ const  userController=require('../controllers/userController')
 router.prefix('/user')
 //用户注册
 router.post('/register',async (ctx,next)=>{
-
+     // let jsondata =  await register(ctx,next);
     await userController.register(ctx,next)
-    ctx.body = {code: 200, message: 'ok', data: jsondata};
+     // ctx.body = {code:200,message:'ok',data:jsondata};
 })
 //用户登录
 
 router.post('/login',async (ctx,next)=>{
-
     await userController.login(ctx,next)
-    ctx.body = {code: 200, message: 'ok', data: jsondata};
+    // ctx.body = {code:200,message:'ok',data:jsondata};
 })
 
 //修改信息
