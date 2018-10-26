@@ -1,3 +1,4 @@
+
 const indexDAO=require('../model/indexDAO')
 module.exports={
      gethotlist:async(ctx,next)=> {
@@ -12,6 +13,12 @@ module.exports={
     ctx.set('content-type', 'application/json')
     ctx.body = {"code": 200, "message": "ok", data: jsondata};
   },
+ onesong:async(ctx,next)=>{
+  let jsondata = await indexDAO.onesong(ctx.params.songid);
+  console.log(jsondata)
+  ctx.set('content-type', 'application/json')
+  ctx.body = {"code": 200, "message": "ok", data: jsondata};
+},
     getworksong:async(ctx,next)=> {
         let jsondata = await indexDAO.getworksong();
         console.log(jsondata)

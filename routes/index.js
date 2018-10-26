@@ -11,6 +11,11 @@ router.get('/onehotlist/:singlistid',async(ctx,next)=>{
   await indexController.getonehotlist(ctx)
 })
 
+//获取某一歌曲的所有信息
+router.get('/onesong/:songid',async(ctx,next)=>{
+  await indexController.onesong(ctx)
+})
+
 //获取所有原创歌曲
 router.get('/worksonglis', async (ctx, next) => {
   await  indexController.getworksong(ctx)
