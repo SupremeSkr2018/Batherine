@@ -5,7 +5,7 @@ router.prefix('/comment')
 router.get('/details/:albumid',async (ctx, next)=>{
     await commentController.comment(ctx)
 })
-//获取某一歌单的评论信息
+//获取某一歌单的评论信
 router.get('/sing/:singlistid',async (ctx, next)=>{
   await commentController.sing(ctx)
 })
@@ -19,7 +19,8 @@ router.get('/song',async (ctx, next)=>{
 })
 //添加专辑评论信息
 router.post('/addComment',async(ctx,next)=> {
-    await commentController.addComment(ctx)
+    let jsondata=await commentController.addComment(ctx)
+    console.log(jsondata)
 })
 
 //添加动态评论信息
