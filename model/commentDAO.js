@@ -19,8 +19,8 @@ class  DB{
     }
     //添加专辑评论信息方法
     addComment(comment){
-        return DAO('insert into comment(ccontent,data,albumid,userid)values(?,?,?,?)',
-            [comment.ccontent,comment.data,comment.albumid,comment.userid])
+        return DAO('insert into comment(ccontent,albumid,userid)values(?,?,?)',
+            [comment.ccontent,comment.albumid,comment.userid])
     }
     //添加动态评论
     addComment1(comment){

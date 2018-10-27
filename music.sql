@@ -11,7 +11,7 @@
  Target Server Version : 80012
  File Encoding         : 65001
 
- Date: 24/10/2018 19:22:36
+ Date: 27/10/2018 10:16:25
 */
 
 SET NAMES utf8mb4;
@@ -35,7 +35,7 @@ CREATE TABLE `album`  (
   PRIMARY KEY (`albumid`) USING BTREE,
   INDEX `fk_album_singer`(`singerid`) USING BTREE,
   CONSTRAINT `fk_album_singer` FOREIGN KEY (`singerid`) REFERENCES `singer` (`singerid`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of album
@@ -110,6 +110,9 @@ INSERT INTO `comment` VALUES (5, '6789', '2018-10-05 00:00:00', NULL, NULL, 1, N
 INSERT INTO `comment` VALUES (6, '世界崩塌了', '2018-10-21 19:23:32', 'id', NULL, NULL, 1, 1, NULL, NULL, NULL);
 INSERT INTO `comment` VALUES (13, '得不到的永远在骚动', '2018-10-21 19:21:24', 'zj', 2, NULL, 1, NULL, NULL, NULL, NULL);
 INSERT INTO `comment` VALUES (14, '13455', '2018-10-23 18:02:59', NULL, NULL, NULL, 1, NULL, 1, NULL, '2018-01-02');
+INSERT INTO `comment` VALUES (15, '22222222222222222222', '2018-10-27 10:14:30', NULL, NULL, NULL, 1, 1, NULL, NULL, NULL);
+INSERT INTO `comment` VALUES (16, '22222222222222222222', '2018-10-27 10:14:52', NULL, NULL, NULL, 1, 1, NULL, NULL, NULL);
+INSERT INTO `comment` VALUES (17, '333333', '2018-10-27 10:16:03', NULL, NULL, NULL, 1, 1, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for creatls
@@ -248,7 +251,7 @@ CREATE TABLE `song`  (
   CONSTRAINT `fk_song_singer` FOREIGN KEY (`singerid`) REFERENCES `singer` (`singerid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_song_singlist` FOREIGN KEY (`singlistid`) REFERENCES `singlist` (`singlistid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_song_work` FOREIGN KEY (`workid`) REFERENCES `works` (`workid`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 139 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 162 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of song

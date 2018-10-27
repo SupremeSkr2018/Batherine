@@ -1,19 +1,19 @@
 //把路由相应的业务分离
 const commentDAO = require('../model/commentDAO')
 module.exports= {
+  //获取对专辑的评论
     comment: async (ctx) => {
-  let jsondata = await commentDAO.comment(ctx.params.albumid);
-  console.log(jsondata)
-  //设置输出格式为json格式
-  ctx.set('content-type', 'application/json');
-  ctx.body = {code: 200, message: ' ok', data: jsondata};
+        let jsondata = await commentDAO.comment(ctx.params.albumid);
+        console.log(jsondata)
+        ctx.set('content-type', 'application/json');
+        ctx.body = {code: 200, message: ' ok', data: jsondata};
 },
+//获取某一歌单的评论
   sing: async (ctx) => {
-  let jsondata = await commentDAO.sing(ctx.params.singlistid);
-  console.log(jsondata)
-  //设置输出格式为json格式
-  ctx.set('content-type', 'application/json');
-  ctx.body = {code: 200, message: ' ok', data: jsondata};
+      let jsondata = await commentDAO.sing(ctx.params.singlistid);
+      console.log(jsondata)
+      ctx.set('content-type', 'application/json');
+      ctx.body = {code: 200, message: ' ok', data: jsondata};
 },
     //获取动态评论信息
     trend: async (ctx) => {
@@ -41,6 +41,7 @@ module.exports= {
         }
         let jsondata = await commentDAO.addComment(comment);
         ctx.body = {code: 200, message: 'add ok', data: jsondata};
+        return jsondata
     },
     //添加动态评论信息
     addComment1: async (ctx) => {
@@ -60,7 +61,6 @@ module.exports= {
         ctx.set('content-type', 'application/json');
         let comment = {
             ccontent: ctx.request.body.ccontent,
-            data: ctx.request.body.data,
             songid: ctx.request.body.songid,
             userid: ctx.request.body.userid,
         }
