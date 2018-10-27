@@ -16,8 +16,16 @@ class DB {
     getworksong(){
         return DAO('select * from works order by data desc',[])
     }
-    //新歌首发
-    // 1 获取内地歌曲
+    //热歌作品排行
+  gethot(id){
+    return DAO('select * from song where hot=?',[id])
+  }
+  //新歌排行
+  getnew(){
+    return DAO('select * from song order by data desc',[])
+  }
+
+    //新歌首发 获取内地歌曲
     getnewsong(id){
         return DAO('select * from song where location=?',[id])
     }
