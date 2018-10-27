@@ -8,5 +8,12 @@ class DB {
     getallcomzan(id){
         return DAO('select count(1) from zan where commentid=?',[id])
     }
+    //点赞
+    addzan(dj) {
+        return DAO('update trend set zannum=zannum+1 where trendid=?', [dj])
+    }
+    delzan(dj){
+        return DAO('update trend set zannum=zannum-1 where trendid=?',[dj])
+    }
 }
 module.exports=new DB();
